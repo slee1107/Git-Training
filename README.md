@@ -24,8 +24,6 @@ PS. `git status` is basically your new best friend. You will call on it __A LOT_
 
 
 
-
-
 ## Part 0: Git yourself set up
 
 Our current set up is fine if all you want to do all day is clone things and gander at them, but we need to do a bit more if we want to actually __contribute__ to any of these repos.
