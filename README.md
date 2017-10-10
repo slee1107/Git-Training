@@ -9,7 +9,7 @@ You are free to peruse this repository using the web interface on which it is ho
 _Getting_ this repository doesn't involve clicking any download buttons. That will download the files in the repo, sure. But what it won't do, is get us all of the git history!
 
 - To do that, find the clone URL on the page. Copy this!
-- Then, navigate your git CLI to a nice, cozy spot in your filesystem. Anywhere you want!
+- Then, navigate your git CLI to a nice, cozy spot in your file system. Anywhere you want!
 - Run `git clone <URL>` where URL is what you just copied.
 
 Then, git will start spitting out a bunch of text that looks like air-traffic controller messages (I don't know anything about "resolving" a delta, but I certainly have flown on delta...).
@@ -83,7 +83,7 @@ This way, you can easily check what is different while you are working!
 
 Now that the changes are saved, and we want to make this change part of the permanent history, we must now `add` these changes to the staging area.
 
-To do this, run `git add <FILEPATH>`, where filepath is the path to the file, including the name.  In this case, this will most likely look like `git add poems.txt`.
+To do this, run `git add <FILEPATH>`, where file path is the path to the file, including the name.  In this case, this will most likely look like `git add poems.txt`.
 
 Now our changes are referenced in the staging area! You might have guessed by now, but you can also make sure of this by running `git status`. My old friend...
 
@@ -117,7 +117,7 @@ Here are some basic rules to write _good_ commit messages.
 
 Looking at all those Haiku has probably gotten everyone really excited to write some of their own...right?
 
-For the sake of science, let's say it has. However, let's keep our poems in a separate file called `my-poems.txt`, because we don't want our artisinal, hand-crafted poems to get mixed in with those other...equally okay poems.
+For the sake of science, let's say it has. However, let's keep our poems in a separate file called `my-poems.txt`, because we don't want our artisanal, hand-crafted poems to get mixed in with those other...equally okay poems.
 
 0. Create a new file called `my-poems.txt`
 0. Open the file in a text editor
@@ -171,7 +171,7 @@ You should now see two things:
 0. There are changes made to `.gitignore`
 0. Your poems file is now being recognized
 
-Interesting. So the file that tells git what to ignore..is also versioned in git. (INSERT INCEPTION MEME HERE)
+Interesting. So the file that tells git what to ignore..is also managed in git. (INSERT INCEPTION MEME HERE)
 
 Well, regardless, all we need to do `git add` all the things, and `git commit` all the things all in one go, right?
 
@@ -189,7 +189,7 @@ As a proof of concept, let's try to write a __good__ commit message for this.
 
 `Allow 'my-poems.*' files and add my-poems.txt`
 
-Not too shabby. But there is one problem. and. And. AND. __AND__. Having to use the word 'and' within a commit message implies that two distinct things are being done, and as such, they should be seperate commits. Luckily git makes this pretty easy.
+Not too shabby. But there is one problem. and. And. AND. __AND__. Having to use the word 'and' within a commit message implies that two distinct things are being done, and as such, they should be separate commits. Luckily git makes this pretty easy.
 
 0. `git add .gitignore`
 0. `git commit`
@@ -280,7 +280,7 @@ __Don't Panic__!
 
 You didn't lose anything. git has all of that stuff saved in the history. Git just doesn't want to break the illusion of time travel, so it made all of the files in the project look the way they would the moment after the commit you had chosen was made.
 
-Once you are done looking around, you can just run `git checkout master` to hop back in your time machine to wherever the end of the master branch is at the moment, which was the branch you were comitting on earlier.
+Once you are done looking around, you can just run `git checkout master` to hop back in your time machine to wherever the end of the master branch is at the moment, which was the branch you were committing on earlier.
 
 
 
@@ -290,7 +290,7 @@ While poking around in the history, you may have noticed a commit that had a pre
 
 Prove you have learned how to conquer history, and go and find that passcode!
 
-> If you are doing this tutorial as part of a classrom environment, after finding the passcode, send your instructor a message containing the passcode, perhaps over __hangouts__ or something... Also don't try to just copy off your neighbor, because the code is really long and if you are trying to hand-type it, you will most certainly mess it up! YOU have to find it yourself :D
+> If you are doing this tutorial as part of a classroom environment, after finding the passcode, send your instructor a message containing the passcode, perhaps over __hangouts__ or something... Also don't try to just copy off your neighbor, because the code is really long and if you are trying to hand-type it, you will most certainly mess it up! YOU have to find it yourself :D
 
 
 
@@ -352,7 +352,7 @@ And bam! Now master has a ton of new information in addition to what it already 
 
 Oh no! More problems! In this case, you have gotten what is referred to as a _merge conflict_.
 
-In reality, this is a somewhat common occurence, and is not a "problem" per se. I wish they were called something else like "intervention merges" or something like that. It just means that there is some ambiguity about what the final version of a branch should look like, based on when commits happened and what they edited.
+In reality, this is a somewhat common occurrence, and is not a "problem" per se. I wish they were called something else like "intervention merges" or something like that. It just means that there is some ambiguity about what the final version of a branch should look like, based on when commits happened and what they edited.
 
 Your `git status` command will show sections that sort-of look like staged and unstaged changes, but in the context of an in progress merge, the "staged" changes are the files that do not need intervention, and the "unstaged" changes are files that do need intervention.
 
@@ -442,13 +442,13 @@ For those who are curious, there isn't any real incentive to deleting a local br
 
 We have visited quite a few places on our little git journey!
 
-However, to be techincal, other than the initial clone, we haven't done anything that required network access. We haven't actually gone anywhere!
+However, to be technical, other than the initial clone, we haven't done anything that required network access. We haven't actually gone anywhere!
 
 Now is the time in which we must `branch` out, and be `master`s of our own destiny. We are going to push our current project to our very own git host.
 
 First, we need an awaiting, empty git repository on a git-hosting service.
 
-> This can be anything really, but this is the point at which your instructor will show you how to create a repo on their preffered service for the lesson, if you don't already have one in mind.
+> This can be anything really, but this is the point at which your instructor will show you how to create a repo on their preferred service for the lesson, if you don't already have one in mind.
 
 Ultimately, all you need is a git endpoint URI.
 
