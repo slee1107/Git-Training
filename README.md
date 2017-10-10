@@ -24,7 +24,7 @@ PS. `git status` is basically your new best friend. You will call on it __A LOT_
 
 
 
-## Part 0: Git yourself set up
+## Part 1: Git yourself set up
 
 Our current set up is fine if all you want to do all day is clone things and gander at them, but we need to do a bit more if we want to actually __contribute__ to any of these repos.
 
@@ -47,7 +47,7 @@ Now that we have that, we have all we need to start committing some crime- I mea
 
 
 
-## Part 0: Fix the incorrect haiku in poem.txt
+## Part 2: Fix the incorrect haiku in poem.txt
 
 To do this, simply open up the file in a text editor (even notepad will do) and delete/modify the parts that are incorrect.
 
@@ -57,7 +57,7 @@ You can make sure of this by running `git status`
 
 
 
-## Part 0: Look at those changes!
+## Part 3: Look at those changes!
 
 So we have made some changes to a file, and we can verify that __something__ was changed according to git, but isn't there a way to see what has changed?
 
@@ -77,7 +77,7 @@ This way, you can easily check what is different while you are working!
 
 
 
-## Part 0: Add the changes to the staging area
+## Part 4: Add the changes to the staging area
 
 Now that the changes are saved, and we want to make this change part of the permanent history, we must now `add` these changes to the staging area.
 
@@ -87,7 +87,7 @@ Now our changes are referenced in the staging area! You might have guessed by no
 
 
 
-## Part 0: Commit the change with a GOOD commit message
+## Part 5: Commit the change with a GOOD commit message
 
 Now that we are happy with the bundle of changes we have in our staging area (yes, I know there is only one in there right now), we can commit this to the git history, which will make it permanent, as well as make it easy to _push_ it around later..
 
@@ -111,7 +111,7 @@ Here are some basic rules to write _good_ commit messages.
 
 
 
-## Part 0: Let's make some new poems!
+## Part 6: Let's make some new poems!
 
 Looking at all those Haiku has probably gotten everyone really excited to write some of their own...right?
 
@@ -132,7 +132,7 @@ First, let's check with our old pal `git status` to make sure git knows we creat
 
 
 
-## Part 0: PANIC!
+## Part 7: PANIC!
 
 WHAT. WHY. Something is very wrong! `git status` doesn't report any new file changes! Clearly there should be. We just created a whole new file, after all.
 
@@ -155,7 +155,7 @@ It is unacceptable to call the file anything else, however. Obviously, we want t
 
 
 
-## Part 0: Free my poems!
+## Part 8: Free my poems!
 
 We have the ability to edit this file too, don't we? We can just remove that ignore rule.
 
@@ -177,7 +177,7 @@ Well..
 
 
 
-## Part 0: Split it up
+## Part 9: Split it up
 
 We could do that..git certainly won't stop us. But just because we can, should we?
 
@@ -219,7 +219,7 @@ Easy!
 
 
 
-## Part 0: History Lesson
+## Part 10: History Lesson
 
 So, we have talked so far about moving things forward, and adding to history, but we haven't stopped yet to _appreciate_ history.
 
@@ -250,7 +250,7 @@ For those who have not used a paging program like this before, the bare necessit
 
 
 
-## Part 0: Check me out
+## Part 11: Check me out
 
 Looking at the history, you might have noticed there are commits in this history that aren't yours. 
 
@@ -282,7 +282,7 @@ Once you are done looking around, you can just run `git checkout master` to hop 
 
 
 
-## Part 0: Prove your courage!
+## Part 12: Prove your courage!
 
 While poking around in the history, you may have noticed a commit that had a pretty weird message. That is no coincidence. That commit (and only that commit) contains a secret file, that contains a secret passcode.
 
@@ -292,7 +292,7 @@ Prove you have learned how to conquer history, and go and find that passcode!
 
 
 
-## Part 0: More Secrets?!
+## Part 13: More Secrets?!
 
 The secrets do not stop there. You have been working on the `master` branch until now, but in fact, there are other branches that have secrets as well.
 
@@ -324,7 +324,7 @@ I want you to __merge__ secrets.
 
 
 
-## Part 0: Worlds Collide
+## Part 14: Worlds Collide
 
 I do not want this secret to simply be handed over as part of a checkout. I want this secret to be merged into master first, then afterwards it may be read.
 
@@ -346,7 +346,7 @@ And bam! Now master has a ton of new information in addition to what it already 
 
 
 
-## Part 0: PANIC!: The Sequel
+## Part 15: PANIC!: The Sequel
 
 Oh no! More problems! In this case, you have gotten what is referred to as a _merge conflict_.
 
@@ -368,7 +368,7 @@ Not as scary as you thought! The only part that should sound scary is deciding t
 
 
 
-## Part 0: Conflicts of Interest
+## Part 16: Conflicts of Interest
 
 A conflict marker looks like this:
 
@@ -404,7 +404,7 @@ Ready for `git add`! Most importantly, notice there is NO EVIDENCE that the conf
 
 
 
-## Part 0: Mergers and Acquisitions
+## Part 17: Mergers and Acquisitions
 
 Armed with this new knowledge, you are now able to resolve the (fairly simple) merge conflict you got as part of merging the secrets branch into master. 
 
@@ -416,7 +416,7 @@ Enjoy your secret!
 
 
 
-## Part 0: Tree Removal Service
+## Part 18: Tree Removal Service
 
 Now that we have done our business with the `secrets` branch, we should get rid of it! This might sound cold blooded, but there isn't much reason to keep around branches that won't be committed to anymore.
 
@@ -436,7 +436,7 @@ For those who are curious, there isn't any real incentive to deleting a local br
 
 
 
-## Part 0: An Origin Story
+## Part 19: An Origin Story
 
 We have visited quite a few places on our little git journey!
 
@@ -468,7 +468,7 @@ Indeed, when using git as part of a team all working on the same repo, you would
 
 
 
-## Part 0: Home is Where the git is
+## Part 20: Home is Where the git is
 
 To change your remote is a fairly simple command:
 
@@ -492,7 +492,7 @@ This creates new remote branches on origin for each and every branch you have lo
 
 
 
-## Part 0: fin
+## Part 21: fin
 
 Once the push succeeds, go to the web page for this repo provided by your git host, and verify you can see everything.
 
