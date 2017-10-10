@@ -4,24 +4,19 @@
 
 ## Part 0: Git this repo
 
-You are free to peruse this repository using the web interface on which it is hosted, but if you
-want to be able to mess around with it, we have to get it first!
+You are free to peruse this repository using the web interface on which it is hosted, but if you want to be able to mess around with it, we have to get it first!
 
-_Getting_ this repository doesn't involve clicking any download buttons. That will download the
-files in the repo, sure. But what it won't do, is get us all of the git history!
+_Getting_ this repository doesn't involve clicking any download buttons. That will download the files in the repo, sure. But what it won't do, is get us all of the git history!
 
 - To do that, find the clone URL on the page. Copy this!
 - Then, navigate your git CLI to a nice, cozy spot in your filesystem. Anywhere you want!
 - Run `git clone <URL>` where URL is what you just copied.
 
-Then, git will start spitting out a bunch of text that looks like air-traffic controller messages
-(I don't know anything about "resolving" a delta, but I certainly have flown on delta...).
+Then, git will start spitting out a bunch of text that looks like air-traffic controller messages (I don't know anything about "resolving" a delta, but I certainly have flown on delta...).
 
 This is just git showing progress on the download of all the history.
 
-If this was successful, there should be a new folder called "git-around". Change into this
-directory and run `git status`. It should display something more meaningful than
-"This is not a git directory" or something like that.
+If this was successful, there should be a new folder called "git-around". Change into this directory and run `git status`. It should display something more meaningful than "This is not a git directory" or something like that.
 
 You are now allowed to change the name of the folder by the way!
 
@@ -33,11 +28,9 @@ PS. `git status` is basically your new best friend. You will call on it __A LOT_
 
 ## Part 0: Git yourself set up
 
-Our current set up is fine if all you want to do all day is clone things and gander at them, but
-we need to do a bit more if we want to actually __contribute__ to any of these repos.
+Our current set up is fine if all you want to do all day is clone things and gander at them, but we need to do a bit more if we want to actually __contribute__ to any of these repos.
 
-There are many things you can configure regarding git behaviour, but the bare minimum we need to
-configure is what name and email address will be stamped on all of the changes we make.
+There are many things you can configure regarding git behaviour, but the bare minimum we need to configure is what name and email address will be stamped on all of the changes we make.
 
 This can be accomplished with these two busy commands:
 
@@ -58,11 +51,9 @@ Now that we have that, we have all we need to start committing some crime- I mea
 
 ## Part 0: Fix the incorrect haiku in poem.txt
 
-To do this, simply open up the file in a text editor (even notepad will do) and delete/modify the
-parts that are incorrect.
+To do this, simply open up the file in a text editor (even notepad will do) and delete/modify the parts that are incorrect.
 
-Save the file. Now our changes made to the file should be recognized by git, though it hasn't done
-anything with them yet.
+Save the file. Now our changes made to the file should be recognized by git, though it hasn't done anything with them yet.
 
 You can make sure of this by running `git status`
 
@@ -90,28 +81,21 @@ This way, you can easily check what is different while you are working!
 
 ## Part 0: Add the changes to the staging area
 
-Now that the changes are saved, and we want to make this change part of the permanent history,
-we must now `add` these changes to the staging area.
+Now that the changes are saved, and we want to make this change part of the permanent history, we must now `add` these changes to the staging area.
 
-To do this, run `git add <FILEPATH>`, where filepath is the path to the file, including the name.
-In this case, this will most likely look like `git add poems.txt`.
+To do this, run `git add <FILEPATH>`, where filepath is the path to the file, including the name.  In this case, this will most likely look like `git add poems.txt`.
 
-Now our changes are referenced in the staging area! You might have guessed by now, but you can also
-make sure of this by running `git status`. My old friend...
+Now our changes are referenced in the staging area! You might have guessed by now, but you can also make sure of this by running `git status`. My old friend...
 
 
 
 ## Part 0: Commit the change with a GOOD commit message
 
-Now that we are happy with the bundle of changes we have in our staging area (yes, I know there is
-only one in there right now), we can commit this to the git history, which will make it permanent,
-as well as make it easy to _push_ it around later..
+Now that we are happy with the bundle of changes we have in our staging area (yes, I know there is only one in there right now), we can commit this to the git history, which will make it permanent, as well as make it easy to _push_ it around later..
 
-This can be done using the command `git commit`. This will open up a text editor interface that
-will let us write the message we want this commit to be remembered by.
+This can be done using the command `git commit`. This will open up a text editor interface that will let us write the message we want this commit to be remembered by.
 
-But what should we write? Are these commemorative messages worded like high school superlatives?
-(Commits of 2017: Most likely to completely break production).
+But what should we write? Are these commemorative messages worded like high school superlatives?  (Commits of 2017: Most likely to completely break production).
 
 What is the point of a commit message anyway? If someone wanted to see what happened, they can just look at the commits contents, right?
 
