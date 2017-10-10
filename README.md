@@ -1,11 +1,3 @@
-
-- delete branch
-- merge branch
-- merge conflict
-- pull
-- push
-- git remote change
-
 # Today, we learn how to git around town!
 
 
@@ -374,3 +366,152 @@ And bam! Now master has a ton of new information in addition to what it already 
 
 ## Part 0: PANIC!: The Sequel
 
+Oh no! More problems! In this case, you have gotten what is referred to as a _merge conflict_.
+
+In reality, this is a somewhat common occurence, and is not a "problem" per se. I wish they were called something else like "intervention merges" or something like that. It just means that there is some ambiguity about what the final version of a branch should look like, based on when commits happened and what they edited.
+
+Your `git status` command will show sections that sort-of look like staged and unstaged changes, but in the context of an in progress merge, the "staged" changes are the files that do not need intervention, and the "unstaged" changes are files that do need intervention.
+
+To "intervene" in this case, all you have to do is follow this formula EXACTLY
+
+0. Open one file that appears in the list of "intervention files" in a text editor
+0. For each conflict marker, decide what the "correct" version of the text should be.
+0. Repeat the previous step until there are no more conflict markers in that file.
+0. Save the file
+0. Run `git add <THE NAME OF THE FILE YOU JUST EDITED>` to mark the file as __resolved__, which moves it into the list of files that do not need intervention.
+0. Repeat from step 1 until no files remain in the intervention list
+0. Run `git commit`
+
+Not as scary as you thought! The only part that should sound scary is deciding the "correct" version of text for a conflict marker.
+
+
+
+## Part 0: Conflicts of Interest
+
+A conflict marker looks like this:
+
+```
+This agreed upon text appears before the conflict
+<<<<<<<<<<<< ACCEPTING_BRANCH_NAME
+The Yankees are the best!
+============
+The Red Sox are the best!
+>>>>>>>>>>>> DONATING_BRANCH_NAME
+This agreed upon text appears after the conflict
+```
+
+If it isn't clear, the part between the `<<<<<<<<<<<<<` and `>>>>>>>>>>>>>` are the parts each branch thinks the line (or lines) in between should be, separated by the `===============`.
+
+git trusts us to either pick the ACCEPTING branches text, the DONATING branches text, or write something else entirely.
+
+In any of those cases, we need to delete the conflict markers once we make a decision. You should never actually mark a file as finished until you delete the conflict markers.
+
+I want to reiterate this.
+
+__YOU SHOULD NEVER ACTUALLY COMMIT CONFLICT MARKERS__
+
+So, an appropriately handled conflict marker based on the above might look like this:
+
+```
+This agreed upon text appears before the conflict
+Baseball is kind of boring..
+This agreed upon text appears after the conflict
+```
+
+Ready for `git add`! Most importantly, notice there is NO EVIDENCE that the conflict markers were ever there in the first place.
+
+
+
+## Part 0: Mergers and Acquisitions
+
+Armed with this new knowledge, you are now able to resolve the (fairly simple) merge conflict you got as part of merging the secrets branch into master. 
+
+So do it! Once you are finished, you should still be on master branch, though master branch now has a shiny new `more-secrets.txt` file.
+
+Enjoy your secret!
+
+> Again. Classroom environment? Send the secret to your instructor. Hangouts? You get the idea.
+
+
+
+## Part 0: Tree Removal Service
+
+Now that we have done our business with the `secrets` branch, we should get rid of it! This might sound cold blooded, but there isn't much reason to keep around branches that won't be committed to anymore.
+
+However, as soon as I say __remove__ some people get nervous.
+
+> Won't I lose my work?
+
+So let's take the time to clear up misconceptions:
+
+- When I refer to deleting a branch, I mean your local copy, the version on remotes/origin/ will remain.
+- This will not "undo" the merge, or get rid of any history or anything like that. Though the details are more complex than this, you can think of the merge as "copying" the history.
+- If you want to poke around the branch ever again, you can just checkout the remote branch again!
+
+The one exception to the first bullet is if the branch was created locally, AND was never pushed, AND was never merged. In this case, deleting it will delete history!
+
+For those who are curious, there isn't any real incentive to deleting a local branch. They don't take much space or anything, but running `git branch` shows only your local branches, and I personally prefer to keep this list short!
+
+
+
+## Part 0: An Origin Story
+
+We have visited quite a few places on our little git journey!
+
+However, to be techincal, other than the initial clone, we haven't done anything that required network access. We haven't actually gone anywhere!
+
+Now is the time in which we must `branch` out, and be `master`s of our own destiny. We are going to push our current project to our very own git host.
+
+First, we need an awaiting, empty git repository on a git-hosting service.
+
+> This can be anything really, but this is the point at which your instructor will show you how to create a repo on their preffered service for the lesson, if you don't already have one in mind.
+
+Ultimately, all you need is a git endpoint URI.
+
+It should look something like this:
+
+`https://website.com/username/repo-name.git`
+
+Maybe like this:
+
+`git@website.com:username/repo-name.git`
+
+Copy this! We need it in the next part.
+
+This is going to be your new `origin`. You might have assumed that your `origin` was __always__ the place from which you cloned it, but this is not the case. `origin` is really just your _default remote_ for all intents and purposes.
+
+We could just all attempt to push to the `origin` we all currently have set, but that would involve adding to the tutorial repo many individuals works, poems and secrets and all, which is potentially ruining many secrets for future learners!
+
+Indeed, when using git as part of a team all working on the same repo, you would very much expect to all `push` to the same place, and git makes this experience _relatively_ painless. But today is a bit of an exception. A __learning__ exception.
+
+
+
+## Part 0: Home is Where the git is
+
+To change your remote is a fairly simple command:
+
+`git remote set-url <REMOTE NAME> <GIT ENDPOINT URI>`
+
+In this case, the remote name will be `origin` and the endpoint URI will be the endpoint you copied in the previous step. _Your_ new repo.
+
+Once we do this, all we have to do is push. `git push` is a command that essentially syncs your local history to a remote (origin by default) so that the remote may merge these commits into its own history. 
+
+For all intents and purposes, the opposite of this is `git pull`, which syncs commits from the remote, pulls them locally, and then merges them into the current branch. 
+
+Ordinarily, it is a good idea to attempt a `git pull` before you `git push`. This gives you a chance to (locally) reconcile any new commits you might not have known about (possibly handling merge conflicts), before you send off your new bits of information. After all, you want to make sure your stuff isn't outdated!
+
+ The one exception is when you are pushing a repo to a new remote.
+
+For this very first push to a new remote, skip the `git pull` and instead run
+
+`git push --set-upstream origin --all`
+
+This creates new remote branches on origin for each and every branch you have locally. Perfect for migrating all of our project history to a new host.
+
+
+
+## Part 0: fin
+
+Once the push succeeds, go to the web page for this repo provided by your git host, and verify you can see everything.
+
+Once you have, pat yourself on the back! You have officially learned how to _git around!_
