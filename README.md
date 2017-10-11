@@ -434,6 +434,15 @@ The one exception to the first bullet is if the branch was created locally, AND 
 
 For those who are curious, there isn't any real incentive to deleting a local branch. They don't take much space or anything, but running `git branch` shows only your local branches, and I personally prefer to keep this list short!
 
+> ### Pro Tip!
+>
+> As you might assume, if deleting a branch is no cause for concern, than creating one is probably pretty easy too, right?
+>
+> Correct!
+>
+> To create a new LOCAL branch, and immediately `checkout` that branch, just run `git checkout -b <NEW BRANCH NAME>`. This branch will start at the commit you had checked out before you switched, but once you start committing, it will be appended to this new branches unique history.
+>
+> Keep in mind that this is just a local branch, which is not tracking any remote branch. To create an equivalent remote branch for your new local branch (which everyone will now be able to see and collaborate on!) just run `git push --set-upstream origin <NEW BRANCH NAME>`. More on this later!
 
 
 ## Part 19: An Origin Story
