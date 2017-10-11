@@ -2,6 +2,7 @@
 
 
 
+## Part 0: Git this repo
 
 You are free to peruse this repository using the web interface on which it is hosted, but if you want to be able to mess around with it, we have to get it first!
 
