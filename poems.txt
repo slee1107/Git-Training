@@ -1,8 +1,7 @@
-  There is my neighbor
-She is running for office
-  Finally, she waves
-
-
+      There is my neighbor
+    She is running for office
+        Finally, she waves
+         
          Haiku are easy
-You can just count the syllables
-      It's five seven five
+  You can just count syllables
+      It is five seven five
